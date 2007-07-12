@@ -1,8 +1,11 @@
 %define libxpm %mklibname xpm 4
+%define develxpm %mklibname -d xpm
+%define staticdevelxpm %mklibname -d -s xpm
+
 Name: libxpm
 Summary:  X Pixmap Library
-Version: 3.5.5
-Release: %mkrel 2
+Version: 3.5.6
+Release: %mkrel 1
 Group: Development/X11
 License: MIT
 URL: http://xorg.freedesktop.org
@@ -35,25 +38,26 @@ pixmapped images, and is used by many popular X programs.
 
 #-----------------------------------------------------------
 
-%package -n %{libxpm}-devel
+%package -n %{develxpm}
 Summary: Development files for %{name}
 Group: Development/X11
 Requires: %{libxpm} = %{version}
 Requires: libx11-devel >= 1.0.0
 Provides: libxpm-devel = %{version}-%{release}
 Provides: xpm-devel = %{version}-%{release}
+Obsoletes: %{libxpm}-devel
 
 Conflicts: libxorg-x11-devel < 7.0
 
-%description -n %{libxpm}-devel
+%description -n %{develxpm}
 Development files for %{name}
 
-%pre -n %{libxpm}-devel
+%pre -n %{develxpm}
 if [ -h %{_includedir}/X11 ]; then
 	rm -f %{_includedir}/X11
 fi
 
-%files -n %{libxpm}-devel
+%files -n %{develxpm}
 %defattr(-,root,root)
 %{_bindir}/cxpm
 %{_bindir}/sxpm
@@ -65,19 +69,20 @@ fi
 
 #-----------------------------------------------------------
 
-%package -n %{libxpm}-static-devel
+%package -n %{staticdevelxpm}
 Summary: Static development files for %{name}
 Group: Development/X11
 Requires: %{libxpm}-devel >= %{version}
 Provides: libxpm-static-devel = %{version}-%{release}
 Provides: xpm-static-devel = %{version}-%{release}
+Obsoletes: %{libxpm}-static-devel
 
 Conflicts: libxorg-x11-static-devel < 7.0
 
-%description -n %{libxpm}-static-devel
+%description -n %{staticdevelxpm}
 Static development files for %{name}
 
-%files -n %{libxpm}-static-devel
+%files -n %{staticdevelxpm}
 %defattr(-,root,root)
 %{_libdir}/libXpm.a
 
@@ -99,12 +104,10 @@ rm -rf %{buildroot}
 %clean
 rm -rf %{buildroot}
 
-%post -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
+%post -n %{libxpm} -p /sbin/ldconfig
+%postun -n %{libxpm} -p /sbin/ldconfig
 
 %files -n %{libxpm}
 %defattr(-,root,root)
 %{_libdir}/libXpm.so.4
 %{_libdir}/libXpm.so.4.11.0
-
-
