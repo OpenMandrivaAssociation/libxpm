@@ -65,7 +65,7 @@ fi
 %{_libdir}/libXpm.la
 %{_libdir}/pkgconfig/xpm.pc
 %{_includedir}/X11/xpm.h
-%{_mandir}/man1/*xpm.1x.bz2
+%{_mandir}/man1/*
 
 #-----------------------------------------------------------
 
