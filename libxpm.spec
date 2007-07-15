@@ -1,11 +1,12 @@
-%define libxpm %mklibname xpm 4
+%define major 4
+%define libxpm %mklibname xpm %{major}
 %define develxpm %mklibname -d xpm
 %define staticdevelxpm %mklibname -d -s xpm
 
 Name: libxpm
 Summary:  X Pixmap Library
 Version: 3.5.6
-Release: %mkrel 1
+Release: %mkrel 2
 Group: Development/X11
 License: MIT
 URL: http://xorg.freedesktop.org
@@ -72,7 +73,7 @@ fi
 %package -n %{staticdevelxpm}
 Summary: Static development files for %{name}
 Group: Development/X11
-Requires: %{libxpm}-devel >= %{version}
+Requires: %{develxpm} >= %{version}
 Provides: libxpm-static-devel = %{version}-%{release}
 Provides: xpm-static-devel = %{version}-%{release}
 Obsoletes: %{libxpm}-static-devel
@@ -109,5 +110,4 @@ rm -rf %{buildroot}
 
 %files -n %{libxpm}
 %defattr(-,root,root)
-%{_libdir}/libXpm.so.4
-%{_libdir}/libXpm.so.4.11.0
+%{_libdir}/libXpm.so.%{major}*
