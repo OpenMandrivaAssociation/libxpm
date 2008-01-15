@@ -6,7 +6,7 @@
 Name: libxpm
 Summary:  X Pixmap Library
 Version: 3.5.7
-Release: %mkrel 2
+Release: %mkrel 3
 Group: Development/X11
 License: MIT
 URL: http://xorg.freedesktop.org
@@ -48,7 +48,7 @@ pixmapped images, and is used by many popular X programs.
 Summary: Development files for %{name}
 Group: Development/X11
 Requires: %{libxpm} = %{version}
-Requires: libx11-devel >= 1.0.0
+Requires: libx11-devel >= 1.1.3
 Provides: libxpm-devel = %{version}-%{release}
 Provides: xpm-devel = %{version}-%{release}
 Obsoletes: %{libxpm}-devel
