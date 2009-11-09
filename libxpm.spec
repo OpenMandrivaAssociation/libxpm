@@ -5,8 +5,8 @@
 
 Name: libxpm
 Summary:  X Pixmap Library
-Version: 3.5.7
-Release: %mkrel 5
+Version: 3.5.8
+Release: %mkrel 1
 Group: Development/X11
 License: MIT
 URL: http://xorg.freedesktop.org
