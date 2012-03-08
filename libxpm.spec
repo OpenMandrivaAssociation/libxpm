@@ -5,7 +5,7 @@
 Name: libxpm
 Summary:  X Pixmap Library
 Version: 3.5.9
-Release: 4
+Release: 5
 Group: Development/X11
 License: MIT
 URL: http://xorg.freedesktop.org
@@ -49,11 +49,6 @@ Conflicts: libxorg-x11-devel < 7.0
 
 %description -n %{develxpm}
 Development files for %{name}
-
-%pre -n %{develxpm}
-if [ -h %{_includedir}/X11 ]; then
-       rm -f %{_includedir}/X11
-fi
 
 %files -n %{develxpm}
 %{_bindir}/cxpm
