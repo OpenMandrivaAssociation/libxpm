@@ -10,6 +10,7 @@ Group:		Development/X11
 License:	MIT
 URL:		http://xorg.freedesktop.org
 Source0:	http://xorg.freedesktop.org/releases/individual/lib/libXpm-%{version}.tar.bz2
+Patch0:		libxpm-aatch64.patch
 
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(xext)
@@ -60,6 +61,7 @@ Development files for %{name}
 
 %prep
 %setup -qn libXpm-%{version}
+%apply_patches
 
 %build
 %configure2_5x \
