@@ -4,14 +4,12 @@
 
 Summary:	X Pixmap Library
 Name:		libxpm
-Version:	3.5.10
-Release:	2
+Version:	3.5.11
+Release:	1
 Group:		Development/X11
 License:	MIT
 Url:		http://xorg.freedesktop.org
 Source0:	http://xorg.freedesktop.org/releases/individual/lib/libXpm-%{version}.tar.bz2
-Patch0:		libxpm-aatch64.patch
-
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(xext)
 BuildRequires:	pkgconfig(xorg-macros)
