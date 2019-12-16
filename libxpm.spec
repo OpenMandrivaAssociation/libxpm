@@ -4,8 +4,8 @@
 
 Summary:	X Pixmap Library
 Name:		libxpm
-Version:	3.5.12
-Release:	4
+Version:	3.5.13
+Release:	1
 Group:		Development/X11
 License:	MIT
 Url:		http://xorg.freedesktop.org
@@ -41,8 +41,7 @@ Provides:	xpm-devel = %{version}-%{release}
 Development files for %{name}
 
 %prep
-%setup -qn libXpm-%{version}
-%apply_patches
+%autosetup -n libXpm-%{version} -p1
 
 %build
 %configure \
@@ -50,10 +49,10 @@ Development files for %{name}
     --x-libraries=%{_libdir} \
     --disable-static
 
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 %files -n %{libname}
 %{_libdir}/libXpm.so.%{major}*
@@ -65,4 +64,3 @@ Development files for %{name}
 %{_libdir}/pkgconfig/xpm.pc
 %{_includedir}/X11/xpm.h
 %{_mandir}/man1/*
-
