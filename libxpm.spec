@@ -13,12 +13,12 @@
 
 Summary:	X Pixmap Library
 Name:		libxpm
-Version:	3.5.13
-Release:	3
+Version:	3.5.14
+Release:	1
 Group:		Development/X11
 License:	MIT
 Url:		http://xorg.freedesktop.org
-Source0:	http://xorg.freedesktop.org/releases/individual/lib/libXpm-%{version}.tar.bz2
+Source0:	http://xorg.freedesktop.org/releases/individual/lib/libXpm-%{version}.tar.xz
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(xext)
 BuildRequires:	pkgconfig(xorg-macros)
@@ -56,7 +56,7 @@ Requires:	%{libname} = %{version}-%{release}
 Provides:	xpm-devel = %{version}-%{release}
 
 %description -n %{devname}
-Development files for %{name}
+Development files for %{name}.
 
 %package -n %{lib32name}
 Summary:	X Pixmap Library (32-bit)
@@ -74,7 +74,7 @@ Requires:	%{lib32name} = %{version}-%{release}
 Requires:	%{devname} = %{version}-%{release}
 
 %description -n %{dev32name}
-Development files for %{name}
+Development files for %{name}.
 
 %prep
 %autosetup -n libXpm-%{version} -p1
@@ -112,7 +112,7 @@ cd build
 %{_libdir}/libXpm.so
 %{_libdir}/pkgconfig/xpm.pc
 %{_includedir}/X11/xpm.h
-%{_mandir}/man1/*
+%doc %{_mandir}/man?/*
 
 %if %{with compat32}
 %files -n %{lib32name}
