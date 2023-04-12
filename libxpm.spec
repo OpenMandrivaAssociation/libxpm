@@ -28,6 +28,7 @@ BuildRequires:	pkgconfig(xcb)
 BuildRequires:	gzip
 BuildRequires:	ncompress
 %if %{with compat32}
+BuildRequires:	libc6
 BuildRequires:	devel(libX11)
 BuildRequires:	devel(libXext)
 BuildRequires:	devel(libXt)
