@@ -26,6 +26,7 @@ BuildRequires:	pkgconfig(xproto)
 BuildRequires:	pkgconfig(xt)
 BuildRequires:	pkgconfig(xcb)
 BuildRequires:	gzip
+BuildRequires:	nocompress
 %if %{with compat32}
 BuildRequires:	devel(libX11)
 BuildRequires:	devel(libXext)
