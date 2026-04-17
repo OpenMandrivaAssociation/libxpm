@@ -24,6 +24,7 @@ BuildRequires:	automake
 BuildRequires:	libtool-base
 BuildRequires:	slibtool
 BuildRequires:	make
+BuildRequires:  gettext
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(xext)
 BuildRequires:	pkgconfig(xorg-macros)
